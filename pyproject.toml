@@ -1,0 +1,39 @@
+[tool.poetry]
+name = "culturally-sensitive-agents"
+version = "0.1.0"
+description = "A framework for creating culturally sensitive AI agents using Hofstede's Cultural Dimensions Theory"
+authors = ["Harrison Dahme <harrison.dahme@gmail.com>"]
+readme = "readme.md"
+packages = [{include = "culturally_sensitive_agents"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+langchain = "^0.3.18"
+langchain_openai = "^0.3.4"
+langgraph = "^0.2.70"
+python-dotenv = "^1.0.1"
+rich = "^13.9.4"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0"
+ruff = "^0.2.0"
+mypy = "^1.8.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+select = ["E", "F", "I", "N", "W", "B", "Q"]
+
+[tool.ruff.isort]
+known-first-party = ["culturally_sensitive_agents"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true 

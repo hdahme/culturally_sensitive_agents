@@ -1,0 +1,343 @@
+character_adaptations:
+  brazil: []
+  china: []
+  india: []
+  japan: []
+  russia: []
+  south_korea: []
+  uae: []
+  usa: []
+country_specific:
+  brazil:
+    avg_baseline: 0.6749999999999999
+    avg_character_consistency: 0.7999999999999999
+    avg_cultural_acceptance: 0.85
+    avg_improvement: 25.925925925925934
+    total_cases: 1
+  china:
+    avg_baseline: 0.6166666666666667
+    avg_character_consistency: 0.8066666666666666
+    avg_cultural_acceptance: 0.85
+    avg_improvement: 37.83783783783783
+    total_cases: 2
+  india:
+    avg_baseline: 0.7166666666666667
+    avg_character_consistency: 0.85
+    avg_cultural_acceptance: 0.85
+    avg_improvement: 18.604651162790695
+    total_cases: 1
+  japan:
+    avg_baseline: 0.6
+    avg_character_consistency: 0.8166666666666668
+    avg_cultural_acceptance: 0.85
+    avg_improvement: 41.66666666666667
+    total_cases: 1
+  russia:
+    avg_baseline: 0.6166666666666667
+    avg_character_consistency: 0.8416666666666668
+    avg_cultural_acceptance: 0.85
+    avg_improvement: 37.83783783783783
+    total_cases: 1
+  south_korea:
+    avg_baseline: 0.6333333333333334
+    avg_character_consistency: 0.8166666666666668
+    avg_cultural_acceptance: 0.8416666666666667
+    avg_improvement: 32.894736842105246
+    total_cases: 1
+  uae:
+    avg_baseline: 0.6166666666666667
+    avg_character_consistency: 0.8250000000000001
+    avg_cultural_acceptance: 0.8333333333333334
+    avg_improvement: 35.13513513513514
+    total_cases: 1
+  usa:
+    avg_baseline: 0.91
+    avg_character_consistency: 0.9008333333333334
+    avg_cultural_acceptance: 0.935
+    avg_improvement: 2.7472527472527495
+    total_cases: 2
+dimension_analysis:
+  individualism:
+    avg_character_consistency: 0.834
+    avg_cultural_acceptance: 0.8719999999999999
+    total_improvements: 10
+  indulgence:
+    avg_character_consistency: 0.82
+    avg_cultural_acceptance: 0.8699999999999999
+    total_improvements: 10
+  long_term_orientation:
+    avg_character_consistency: 0.8480000000000001
+    avg_cultural_acceptance: 0.8639999999999999
+    total_improvements: 10
+  masculinity:
+    avg_character_consistency: 0.826
+    avg_cultural_acceptance: 0.852
+    total_improvements: 10
+  power_distance:
+    avg_character_consistency: 0.841
+    avg_cultural_acceptance: 0.8669999999999998
+    total_improvements: 10
+  uncertainty_avoidance:
+    avg_character_consistency: 0.85
+    avg_cultural_acceptance: 0.8619999999999999
+    total_improvements: 10
+overall_metrics:
+  avg_improvement: 0
+  avg_iterations: 1.0
+  character_consistency:
+    avg: 0.8365
+    max: 0.9066666666666667
+    min: 0.7999999999999999
+  cultural_acceptance:
+    avg: 0.8644999999999999
+    max: 0.9366666666666666
+    min: 0.8333333333333334
+  total_cases: 10
+  total_iterations: 10
+test_cases:
+- countries:
+    brazil:
+      baseline_score: 0.6749999999999999
+      character_consistency: 0.7999999999999999
+      cultural_acceptance: 0.85
+      dimension_improvements:
+        individualism:
+          character_consistency: 0.8
+          cultural_acceptance: 0.85
+        indulgence:
+          character_consistency: 0.8
+          cultural_acceptance: 0.85
+        long_term_orientation:
+          character_consistency: 0.8
+          cultural_acceptance: 0.85
+        masculinity:
+          character_consistency: 0.8
+          cultural_acceptance: 0.85
+        power_distance:
+          character_consistency: 0.8
+          cultural_acceptance: 0.85
+        uncertainty_avoidance:
+          character_consistency: 0.8
+          cultural_acceptance: 0.85
+      iterations: 1
+    china:
+      baseline_score: 0.6333333333333334
+      character_consistency: 0.7999999999999999
+      cultural_acceptance: 0.85
+      dimension_improvements:
+        individualism:
+          character_consistency: 0.8
+          cultural_acceptance: 0.85
+        indulgence:
+          character_consistency: 0.8
+          cultural_acceptance: 0.85
+        long_term_orientation:
+          character_consistency: 0.8
+          cultural_acceptance: 0.85
+        masculinity:
+          character_consistency: 0.7
+          cultural_acceptance: 0.85
+        power_distance:
+          character_consistency: 0.8
+          cultural_acceptance: 0.85
+        uncertainty_avoidance:
+          character_consistency: 0.9
+          cultural_acceptance: 0.85
+      iterations: 1
+    japan:
+      baseline_score: 0.6
+      character_consistency: 0.8166666666666668
+      cultural_acceptance: 0.85
+      dimension_improvements:
+        individualism:
+          character_consistency: 0.8
+          cultural_acceptance: 0.85
+        indulgence:
+          character_consistency: 0.8
+          cultural_acceptance: 0.85
+        long_term_orientation:
+          character_consistency: 0.8
+          cultural_acceptance: 0.85
+        masculinity:
+          character_consistency: 0.8
+          cultural_acceptance: 0.85
+        power_distance:
+          character_consistency: 0.8
+          cultural_acceptance: 0.85
+        uncertainty_avoidance:
+          character_consistency: 0.9
+          cultural_acceptance: 0.85
+      iterations: 1
+    usa:
+      baseline_score: 0.9
+      character_consistency: 0.8950000000000001
+      cultural_acceptance: 0.9366666666666666
+      dimension_improvements:
+        individualism:
+          character_consistency: 0.9
+          cultural_acceptance: 0.95
+        indulgence:
+          character_consistency: 0.9
+          cultural_acceptance: 0.95
+        long_term_orientation:
+          character_consistency: 0.9
+          cultural_acceptance: 0.92
+        masculinity:
+          character_consistency: 0.9
+          cultural_acceptance: 0.95
+        power_distance:
+          character_consistency: 0.92
+          cultural_acceptance: 0.95
+        uncertainty_avoidance:
+          character_consistency: 0.85
+          cultural_acceptance: 0.9
+      iterations: 1
+  prompt: How should I approach my team about a new project?
+- countries:
+    china:
+      baseline_score: 0.6
+      character_consistency: 0.8133333333333334
+      cultural_acceptance: 0.85
+      dimension_improvements:
+        individualism:
+          character_consistency: 0.9
+          cultural_acceptance: 0.85
+        indulgence:
+          character_consistency: 0.8
+          cultural_acceptance: 0.85
+        long_term_orientation:
+          character_consistency: 0.75
+          cultural_acceptance: 0.85
+        masculinity:
+          character_consistency: 0.88
+          cultural_acceptance: 0.85
+        power_distance:
+          character_consistency: 0.75
+          cultural_acceptance: 0.85
+        uncertainty_avoidance:
+          character_consistency: 0.8
+          cultural_acceptance: 0.85
+      iterations: 1
+    india:
+      baseline_score: 0.7166666666666667
+      character_consistency: 0.85
+      cultural_acceptance: 0.85
+      dimension_improvements:
+        individualism:
+          character_consistency: 0.8
+          cultural_acceptance: 0.85
+        indulgence:
+          character_consistency: 0.8
+          cultural_acceptance: 0.85
+        long_term_orientation:
+          character_consistency: 0.9
+          cultural_acceptance: 0.85
+        masculinity:
+          character_consistency: 0.8
+          cultural_acceptance: 0.85
+        power_distance:
+          character_consistency: 0.9
+          cultural_acceptance: 0.85
+        uncertainty_avoidance:
+          character_consistency: 0.9
+          cultural_acceptance: 0.85
+      iterations: 1
+    russia:
+      baseline_score: 0.6166666666666667
+      character_consistency: 0.8416666666666668
+      cultural_acceptance: 0.85
+      dimension_improvements:
+        individualism:
+          character_consistency: 0.8
+          cultural_acceptance: 0.85
+        indulgence:
+          character_consistency: 0.9
+          cultural_acceptance: 0.85
+        long_term_orientation:
+          character_consistency: 0.9
+          cultural_acceptance: 0.85
+        masculinity:
+          character_consistency: 0.8
+          cultural_acceptance: 0.85
+        power_distance:
+          character_consistency: 0.85
+          cultural_acceptance: 0.85
+        uncertainty_avoidance:
+          character_consistency: 0.8
+          cultural_acceptance: 0.85
+      iterations: 1
+  prompt: What's the best way to give feedback to a colleague?
+- countries:
+    south_korea:
+      baseline_score: 0.6333333333333334
+      character_consistency: 0.8166666666666668
+      cultural_acceptance: 0.8416666666666667
+      dimension_improvements:
+        individualism:
+          character_consistency: 0.8
+          cultural_acceptance: 0.85
+        indulgence:
+          character_consistency: 0.75
+          cultural_acceptance: 0.85
+        long_term_orientation:
+          character_consistency: 0.9
+          cultural_acceptance: 0.85
+        masculinity:
+          character_consistency: 0.85
+          cultural_acceptance: 0.8
+        power_distance:
+          character_consistency: 0.8
+          cultural_acceptance: 0.85
+        uncertainty_avoidance:
+          character_consistency: 0.8
+          cultural_acceptance: 0.85
+      iterations: 1
+    uae:
+      baseline_score: 0.6166666666666667
+      character_consistency: 0.8250000000000001
+      cultural_acceptance: 0.8333333333333334
+      dimension_improvements:
+        individualism:
+          character_consistency: 0.8
+          cultural_acceptance: 0.85
+        indulgence:
+          character_consistency: 0.75
+          cultural_acceptance: 0.85
+        long_term_orientation:
+          character_consistency: 0.85
+          cultural_acceptance: 0.85
+        masculinity:
+          character_consistency: 0.8
+          cultural_acceptance: 0.75
+        power_distance:
+          character_consistency: 0.9
+          cultural_acceptance: 0.85
+        uncertainty_avoidance:
+          character_consistency: 0.85
+          cultural_acceptance: 0.85
+      iterations: 1
+    usa:
+      baseline_score: 0.92
+      character_consistency: 0.9066666666666667
+      cultural_acceptance: 0.9333333333333335
+      dimension_improvements:
+        individualism:
+          character_consistency: 0.94
+          cultural_acceptance: 0.97
+        indulgence:
+          character_consistency: 0.9
+          cultural_acceptance: 0.95
+        long_term_orientation:
+          character_consistency: 0.88
+          cultural_acceptance: 0.92
+        masculinity:
+          character_consistency: 0.93
+          cultural_acceptance: 0.92
+        power_distance:
+          character_consistency: 0.89
+          cultural_acceptance: 0.92
+        uncertainty_avoidance:
+          character_consistency: 0.9
+          cultural_acceptance: 0.92
+      iterations: 1
+  prompt: How do I negotiate a salary increase?

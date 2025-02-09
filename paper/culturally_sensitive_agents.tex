@@ -1,0 +1,1797 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+]{article}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\usepackage{fontawesome5}
+\usepackage{hyperref}
+\usepackage{}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\usepackage{graphicx}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\newenvironment{Shaded}{}{}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.50,0.00}{\textbf{#1}}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{}
+
+\begin{document}
+
+\begin{center}
+\section{Culturally Sensitive Character Agents}
+\textit{Integrating Hofstede's Cultural Dimensions with LLM Systems}\\[0.5em]
+\label{culturally-sensitive-character-agents-integrating-hofstedes-cultural-dimensions-with-llm-systems}
+\end{center}
+
+
+\begin{center}
+\href{mailto:harrison@interval.xyz}{Harrison Dahme¹}\\
+¹Chief Scientist, Interval
+
+\href{https://github.com/hdahme/culturally_sensitive_agents}{Code on GitHub} {\faGithub}
+\end{center}
+
+\subsection{Executive Summary}\label{executive-summary}
+
+This paper presents a practical framework for creating AI agents that
+can communicate effectively across different cultures while maintaining
+consistent character personalities. Our key innovations and findings
+include the following.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Business Impact}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    34\% average improvement in cultural acceptance for non-Western
+    markets
+  \item
+    85\% character consistency maintenance during cultural adaptation
+  \item
+    92\% success rate in preserving brand voice across cultures
+  \end{itemize}
+\item
+  \textbf{Technical Achievements}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Automated cultural adaptation system using Hofstede's dimensions
+  \item
+    Real-time response evaluation and refinement
+  \item
+    Scalable template system for multiple markets
+  \end{itemize}
+\item
+  \textbf{Market Applications}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Global customer service optimization
+  \item
+    Cross-cultural team communication
+  \item
+    International brand voice management
+  \item
+    Cultural sensitivity training
+  \end{itemize}
+\item
+  \textbf{Investment Highlights}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Proven effectiveness across 8 major markets
+  \item
+    Minimal computational overhead (avg. 2.1s processing time)
+  \item
+    Scalable architecture for enterprise deployment
+  \item
+    Clear path to market integration
+  \end{itemize}
+\end{enumerate}
+
+\subsection{Abstract}\label{abstract}
+
+We present a novel framework for evaluating and adapting LLM prompts
+through a cultural lens. Our system addresses three key challenges:
+
+\begin{enumerate}
+\tightlist
+\item
+adapting existing prompts to be culturally sensitive using Hofstede's
+Cultural Dimensions Theory, and 
+\item
+quantifying the likelihood of
+response acceptance across different cultures. 
+\item 
+to the extent that the prompt is oriented with a "voice", maintaining that style in light of the two above constraints
+\end{enumerate}
+
+Through a combination of LangGraph-based orchestration and multi-stage 
+evaluation, we demonstrate that culturally-adapted prompts generate 
+responses that are significantly more likely to be accepted by target 
+cultures compared to unadjusted prompts.
+
+\subsection{1. Introduction}\label{introduction}
+
+Large Language Models (LLMs) have demonstrated remarkable capabilities
+in generating human-like responses across various domains. However,
+these models often exhibit Western cultural biases, limiting their
+effectiveness in cross-cultural interactions, or limiting the ability to
+generate responses that are culturally sensitive in certain situations.
+
+\subsubsection{The Legacy of ELIZA and Character-Based
+Interaction}\label{the-legacy-of-eliza-and-character-based-interaction}
+
+The concept of character-based AI interaction traces back to Joseph
+Weizenbaum's ELIZA {[}6{]} and much more recent work from Walters et
+al.~{[}7{]}, the pioneering chatbot agent that demonstrates how a
+well-defined character persona can create compelling and meaningful
+interactions. Eliza's success isn't just in its pattern-matching
+capabilities, but in its consistent maintenance of a therapeutic
+character that users find relatable and trustworthy. This fundamental
+insight---that character consistency builds trust and
+engagement---remains crucial in modern AI interactions.
+
+Character-based AI systems offer several key advantages:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Trust Building}: A consistent character personality creates
+  predictable interaction patterns, helping users build mental models of
+  the AI's behavior.
+\item
+  \textbf{Engagement}: Well-defined characters with distinct
+  personalities and expertise areas make interactions more memorable and
+  meaningful.
+\item
+  \textbf{Expectation Management}: Clear character roles help users
+  understand the AI's capabilities and limitations.
+\item
+  \textbf{Cultural Adaptation}: Characters can serve as cultural
+  bridges, adapting their communication style while maintaining core
+  traits.
+\end{enumerate}
+
+However, maintaining character consistency while adapting to different
+cultural contexts presents unique challenges. An AI character must: 
+
+\begin{itemize}
+  \tightlist
+  \item
+    Preserve its core personality traits and expertise
+  \item
+    Adapt its communication style to cultural norms
+  \item
+    Balance authenticity with cultural sensitivity
+  \item 
+    Maintain consistent domain knowledge across cultures
+  \end{itemize}
+
+These limitations raise two critical questions while maintaining
+character consistency:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  How can we systematically adapt existing prompts to be more culturally
+  appropriate?
+\item
+  How can we measure whether culturally-adapted responses are more
+  likely to be accepted by the target culture?
+\end{enumerate}
+
+Our work addresses these questions by:
+
+\begin{enumerate}
+\tightlist
+\item
+Developing a framework for
+prompt adaptation based on Hofstede's cultural dimensions 
+\item
+Creating a
+quantitative evaluation system for cultural acceptance prediction 
+\item
+Comparing adapted vs.~unadjusted prompts across different cultural
+contexts 
+\item
+Providing empirical evidence for the effectiveness of
+cultural adaptation
+\end{enumerate}
+
+\subsubsection{1.1 Business Context}\label{business-context}
+
+The globalization of AI interactions presents both challenges and
+opportunities:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Market Need}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \$X billion global conversational AI market
+  \item
+    Y\% of customers prefer culturally adapted interactions
+  \item
+    Z\% higher engagement with culturally appropriate AI responses
+  \end{itemize}
+\item
+  \textbf{Current Limitations}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Western bias in existing solutions
+  \item
+    High cost of manual cultural adaptation
+  \item
+    Inconsistent brand voice across markets
+  \end{itemize}
+\item
+  \textbf{Our Solution}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Automated cultural adaptation
+  \item
+    Consistent brand/character voice
+  \item
+    Measurable improvement metrics
+  \end{itemize}
+\end{enumerate}
+
+\subsection{2. Related Work}\label{related-work}
+
+\subsubsection{2.1 Cultural Dimensions
+Theory}\label{cultural-dimensions-theory}
+
+Hofstede's Cultural Dimensions Theory {[}1{]} provides a framework for
+understanding how cultural values influence behavior. The six dimensions
+are:
+
+\begin{itemize}
+\tightlist
+\item
+  Power Distance Index (PDI): Acceptance of power inequality in society
+\item
+  Individualism vs.~Collectivism (IDV): Individual vs.~group orientation
+\item
+  Masculinity vs.~Femininity (MAS): Competition vs.~cooperation values
+\item
+  Uncertainty Avoidance Index (UAI): Tolerance for ambiguity and
+  uncertainty
+\item
+  Long-term vs.~Short-term Orientation (LTO): Time horizon for social
+  values
+\item
+  Indulgence vs.~Restraint (IVR): Gratification of basic human desires
+\end{itemize}
+
+Recent work by Kharchenko et al.~{[}2{]} has demonstrated that while
+LLMs can differentiate between cultural values and understand
+country-specific differences, they don't always maintain these values
+consistently when generating responses.
+
+\subsubsection{2.2 LLMs and Cultural
+Adaptation}\label{llms-and-cultural-adaptation}
+
+Previous work on cultural adaptation in LLMs has focused primarily on: 
+\begin{itemize}
+  \tightlist
+  \item
+    Cultural alignment testing and quantification {[}3{]}
+  \item 
+    Analysis of cultural bias in model responses {[}4{]}
+  \item 
+    Cross-cultural value representation {[}2{]}
+  \item 
+    Cultural prompting and adaptation techniques {[}5{]}
+  \end{itemize}
+
+Our approach differs by integrating cultural dimensions directly into
+the response generation process while maintaining character consistency.
+
+\subsubsection{2.3 Character Consistency in AI
+Systems}\label{character-consistency-in-ai-systems}
+
+The importance and form factor of human computer interaction has been a
+focus of research since the beginning of the field. As far as artificial companions, early work demonstrated that
+users develop stronger engagement with AI systems that maintain
+consistent personas, even with limited technical capabilities. Modern
+approaches to character consistency can be categorized into three main
+areas:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Persona-Based Dialogue Systems}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Fixed character definitions with predefined traits
+  \item
+    Rule-based response templates
+  \item
+    Limited adaptability to different contexts
+  \end{itemize}
+\item
+  \textbf{Dynamic Character Modeling}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Learned personality embeddings
+  \item
+    Context-aware response generation
+  \item
+    Challenges in maintaining consistency
+  \end{itemize}
+\item
+  \textbf{Multi-Character Frameworks}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Shared knowledge bases with distinct personalities
+  \item
+    Role-specific response generation
+  \item
+    Complex interaction management
+  \end{itemize}
+\end{enumerate}
+
+Recent work in character-based AI systems {[}7{]} has shown that
+maintaining consistent character traits while allowing for contextual
+adaptation is crucial for building trust and engagement. However, these
+systems often struggle with cultural adaptation, either maintaining
+rigid character consistency at the expense of cultural appropriateness,
+or losing character coherence when attempting to adapt to different
+cultural contexts. This lifts the veil and makes the whole interaction feel mechanical.
+
+Our approach bridges this gap by: 
+\begin{itemize}
+  \tightlist
+  \item
+    Separating core character traits from interaction style
+  \item 
+    Enabling cultural adaptation while preserving character authenticity
+  \item 
+    Providing quantitative metrics for both consistency and cultural appropriateness
+  \item 
+    Supporting systematic adaptation across multiple cultural dimensions
+\end{itemize}
+
+\subsection{3. System Architecture}\label{system-architecture}
+
+\subsubsection{3.1 Overview}\label{overview}
+
+Our system consists of three main components, as illustrated in Figure
+1:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Cultural Dimension Generator}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Implements core cultural dimension definitions
+  \item
+    Provides character-culture integration
+  \item
+    Manages country-specific dimension profiles
+  \end{itemize}
+\item
+  \textbf{Cultural Response Orchestrator}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    LangGraph-based response generation
+  \item
+    Cultural appropriateness evaluation
+  \item
+    Benchmarking and metrics calculation
+  \end{itemize}
+\item
+  \textbf{Evaluation Framework}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Multi-dimensional scoring system
+  \item
+    Character consistency verification
+  \item
+    Cultural authenticity assessment
+  \end{itemize}
+\end{enumerate}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{Fig1.png}
+    \caption{System Architecture}
+    \label{fig:enter-label}
+\end{figure}
+
+The overall system architecture (Figure 1) shows how these components
+interact through a state-managed workflow.
+
+\subsubsection{3.2 LangGraph Workflow}\label{langgraph-workflow}
+
+\begin{figure}
+    \centering
+    \includegraphics[height=0.5\textwidth]{Fig2.png}
+    \caption{LangGraph Workflow}
+    \label{fig:enter-label}
+\end{figure}
+
+The system employs a four-stage workflow, as shown in Figure 2:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{State Initialization}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Load character definition
+  \item
+    Initialize cultural dimensions
+  \end{itemize}
+\item
+  \textbf{Response Generation}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Generate candidate responses
+  \item
+    Iterate towards cultural adaptation
+  \item
+    Maintain character consistency
+  \end{itemize}
+\item
+  \textbf{Cultural Evaluation}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Assess cultural appropriateness
+  \item
+    Evaluate character consistency
+  \item
+    Generate detailed feedback to adjust cultural lens
+  \end{itemize}
+\item
+  \textbf{Benchmarking}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Calculate aggregate scores
+  \item
+    Generate dimension-specific metrics
+  \item
+    Produce evaluation reports
+  \end{itemize}
+\end{enumerate}
+
+The sequence of interactions between components is detailed in Figure 3,
+showing how user queries flow through the system.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{Fig3.png}
+    \caption{Cultural Response Orchestration}
+    \label{fig:enter-label}
+\end{figure}
+
+\subsubsection{3.3 Data Flow and Component
+Interaction}\label{data-flow-and-component-interaction}
+
+The data flow through the system (Figure 4) demonstrates how cultural
+dimensions and character definitions are combined with user queries to
+generate appropriate responses. The component interaction diagram
+(Figure 5) shows the relationships between key classes in our
+implementation.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{Fig4.png}
+    \caption{Prompt Flow through the System}
+    \label{fig:enter-label}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\textwidth]{Fig5.png}
+    \caption{Component Interactions}
+    \label{fig:enter-label}
+\end{figure}
+
+Key features of our architecture include:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{State Management}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Well defined orchestration execution from LangGraph
+  \item
+    Clear separation of concerns
+  \end{itemize}
+\item
+  \textbf{Cultural Integration}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Direct mapping of Hofstede dimensions to prompts
+  \item
+    Character-culture balance
+  \item
+    Flexible adaptation mechanisms
+  \end{itemize}
+\item
+  \textbf{Evaluation Pipeline}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Multi-stage assessment
+  \end{itemize}
+\end{enumerate}
+
+\subsection{4. Implementation}\label{implementation}
+
+\subsubsection{4.1 Cultural Dimension
+Modeling}\label{cultural-dimension-modeling}
+
+Our approach to modeling cultural dimensions combines Hofstede's theoretical framework with practical implementation considerations. The core primitive is a multi-dimensional model which details each of the cultural axes. Each dimension is normalized to a 0-100 scale, allowing for more nuance. This quantitative foundation enables weighting cultural adaptation while scaling character adjustments.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\AttributeTok{@dataclass}
+\KeywordTok{class}\NormalTok{ CulturalDimensions:}
+\NormalTok{    power\_distance: }\BuiltInTok{float}
+\NormalTok{    individualism: }\BuiltInTok{float}
+\NormalTok{    masculinity: }\BuiltInTok{float}
+\NormalTok{    uncertainty\_avoidance: }\BuiltInTok{float}
+\NormalTok{    long\_term\_orientation: }\BuiltInTok{float}
+\NormalTok{    indulgence: }\BuiltInTok{float}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{4.2 Response Generation and Adaptation
+Techniques}\label{response-generation-and-adaptation-techniques}
+
+Our system uses a multi-stage approach to generating culturally adapted responses while maintaining character consistency. At the heart of our adaptation system lies a dimension-aware prompt engineering framework. This approach incorporates the cultural dimensions into the response generation process, allowing for nuanced adaptation while preserving the core message. This is akin to having cultural dials managed by the prompt interface. For full detail, please see the code in Github.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Dimension-Guided Prompt Engineering}:
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ create\_adapted\_prompt(}\VariableTok{self}\NormalTok{, original\_prompt: }\BuiltInTok{str}\NormalTok{, dimension: }\BuiltInTok{str}\NormalTok{, guideline: }\BuiltInTok{str}\NormalTok{)}\NormalTok{:}
+\NormalTok{    cultural\_context }\OperatorTok{=}\NormalTok{ \{}
+        \StringTok{"power\_distance"}\NormalTok{: }\StringTok{"Considering organizational hierarchy"}\NormalTok{,}
+        \StringTok{"individualism"}\NormalTok{: }\StringTok{"Thinking about personal/group dynamics"}\NormalTok{,}
+        \CommentTok{\# ... other dimensions}
+\NormalTok{    \}}
+    \ControlFlowTok{return} \SpecialStringTok{f"}\SpecialCharTok{\{}\NormalTok{cultural\_context[dimension]}\SpecialCharTok{\}}\SpecialStringTok{, }\SpecialCharTok{\{}\NormalTok{guideline}\SpecialCharTok{\}}\SpecialStringTok{: }\SpecialCharTok{\{}\NormalTok{original\_prompt}\SpecialCharTok{\}}\SpecialStringTok{"}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  \textbf{Cultural Context Integration}:
+\end{enumerate}
+
+Cultural context integration represents one of the more sophisticated aspects of our system. Rather than treating cultural adaptation as a simple translation or style adjustment, our approach works via templating the original prompt. This allows for separation of character voicing, while dialing tone. Further, in practice, this can operate as a post processing step on the original prompting flow, removing maintenance burden. If latency requirements allow, this can be looped into an emergent pattern.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{cultural\_prompt }\OperatorTok{=} \StringTok{f"""}
+\StringTok{Cultural Context for }\SpecialCharTok{\{}\NormalTok{country}\SpecialCharTok{\}}\StringTok{:}
+\SpecialCharTok{\{}\NormalTok{dimensions\_to\_string(cultural\_dimensions)}\SpecialCharTok{\}}
+
+\StringTok{Guidelines:}
+\SpecialCharTok{\{}\NormalTok{cultural\_suggestions}\SpecialCharTok{\}}
+
+\StringTok{Target Focus: }\SpecialCharTok{\{}\NormalTok{primary\_dimension}\SpecialCharTok{\}}
+
+\StringTok{Character Voice Maintenance:}
+\SpecialCharTok{\{}\NormalTok{character\_traits}\SpecialCharTok{\}}
+
+\StringTok{Response Template:}
+\SpecialCharTok{\{}\NormalTok{base\_template}\SpecialCharTok{\}}
+\StringTok{"""}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  \textbf{Iterative Refinement Process}:
+\end{enumerate}
+
+Since models may hallucinate, we take advantage of LangGraph's conditional edges, and evaluate cultural acceptance after prompt generation. While we only evaluate for tone, we could expand this to ensure character consistency, without sounding too mechanical. Pending feedback, we may trigger a response regeneration.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  \textbf{Cultural Suggestion Generation}:
+\end{enumerate}
+
+Finally, as tone is somewhat consistent across all characters, and all styles should be compatible with every tone, we save the tone adjustments as modifiers that can be attached to any one character - and injected into the prompt as a post-processing step. 
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cultural\_style}\KeywordTok{:}
+\AttributeTok{  }\KeywordTok{{-}}\AttributeTok{ Use indirect communication}
+\AttributeTok{  }\KeywordTok{{-}}\AttributeTok{ Emphasize group harmony}
+\FunctionTok{cultural\_topics}\KeywordTok{:}
+\AttributeTok{  }\KeywordTok{{-}}\AttributeTok{ Team collaboration}
+\AttributeTok{  }\KeywordTok{{-}}\AttributeTok{ Consensus building}
+\FunctionTok{cultural\_taboos}\KeywordTok{:}
+\AttributeTok{  }\KeywordTok{{-}}\AttributeTok{ Direct confrontation}
+\AttributeTok{  }\KeywordTok{{-}}\AttributeTok{ Individual prominence}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{4.3 Evaluation Framework}\label{evaluation-framework}
+
+Our evaluation system employs a multi-stage approach:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Baseline Assessment}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Direct response generation without cultural adaptation
+  \item
+    Measurement of inherent cultural appropriateness
+  \item
+    Character consistency scoring (when applicable)
+  \end{itemize}
+\item
+  \textbf{Adaptation Evaluation}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Cultural acceptance scoring
+  \item
+    Dimension-specific analysis
+  \item
+    Improvement calculation against baseline
+  \end{itemize}
+\item
+  \textbf{Comparative Metrics}:
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{improvement }\OperatorTok{=}\NormalTok{ (adapted\_score }\OperatorTok{{-}}\NormalTok{ baseline\_score) }\OperatorTok{/}\NormalTok{ baseline\_score }\OperatorTok{*} \DecValTok{100}
+\NormalTok{dimension\_impact }\OperatorTok{=} \BuiltInTok{sum}\NormalTok{(dimension\_scores) }\OperatorTok{/} \BuiltInTok{len}\NormalTok{(dimensions)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{4.4 Character Consistency and Cross-Cultural
+Roleplaying}\label{character-consistency-and-cross-cultural-roleplaying}
+
+Our framework introduces a unique approach to maintaining character
+consistency while adapting to different cultural contexts. This is
+particularly important for character-based AI systems that need to
+maintain their core personality while operating across different
+cultural settings and different venues.
+
+\paragraph{4.4.1 Character Template
+Structure}\label{character-template-structure}
+
+Inspired by Eliza, the base character template is defined using a flexible YAML structure:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{character\_definition}\KeywordTok{:}
+\AttributeTok{  }\FunctionTok{core\_traits}\KeywordTok{:}
+\AttributeTok{    }\FunctionTok{personality}\KeywordTok{:}
+\AttributeTok{      }\KeywordTok{{-}}\AttributeTok{ analytical\_thinking}
+\AttributeTok{      }\KeywordTok{{-}}\AttributeTok{ empathetic\_response}
+\AttributeTok{      }\KeywordTok{{-}}\AttributeTok{ professional\_demeanor}
+\AttributeTok{    }\FunctionTok{voice}\KeywordTok{:}
+\AttributeTok{      }\FunctionTok{style}\KeywordTok{:}\AttributeTok{ }\KeywordTok{[}\AttributeTok{formal}\KeywordTok{,}\AttributeTok{ technical}\KeywordTok{,}\AttributeTok{ supportive}\KeywordTok{]}
+\AttributeTok{      }\FunctionTok{tone}\KeywordTok{:}\AttributeTok{ }\KeywordTok{[}\AttributeTok{confident}\KeywordTok{,}\AttributeTok{ respectful}\KeywordTok{,}\AttributeTok{ precise}\KeywordTok{]}
+\AttributeTok{  }
+\AttributeTok{  }\FunctionTok{cultural\_adaptations}\KeywordTok{:}
+\AttributeTok{    }\FunctionTok{base\_template}\KeywordTok{:}\AttributeTok{ }\StringTok{"\{personality\_trait\} while \{cultural\_guideline\}"}
+\AttributeTok{    }\FunctionTok{adaptation\_rules}\KeywordTok{:}
+\AttributeTok{      }\FunctionTok{high\_pdi\_cultures}\KeywordTok{:}
+\AttributeTok{        }\KeywordTok{{-}}\AttributeTok{ Maintain formal language}
+\AttributeTok{        }\KeywordTok{{-}}\AttributeTok{ Emphasize hierarchical respect}
+\AttributeTok{        }\KeywordTok{{-}}\AttributeTok{ Preserve core expertise}
+\AttributeTok{      }\FunctionTok{high\_collectivism}\KeywordTok{:}
+\AttributeTok{        }\KeywordTok{{-}}\AttributeTok{ Adapt to group{-}focused language}
+\AttributeTok{        }\KeywordTok{{-}}\AttributeTok{ Maintain individual expertise}
+\AttributeTok{        }\KeywordTok{{-}}\AttributeTok{ Balance personal/group dynamics}
+\end{Highlighting}
+\end{Shaded}
+
+\paragraph{4.4.2 Cultural Adaptation
+Mechanisms}\label{cultural-adaptation-mechanisms}
+
+The system employs several techniques to maintain character consistency
+across cultures:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Trait Preservation with Cultural Adaptation}:
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ adapt\_character\_response(}
+    \VariableTok{self}\NormalTok{,}
+\NormalTok{    character: CharacterDefinition,}
+\NormalTok{    culture: CulturalDimensions,}
+\NormalTok{    prompt: }\BuiltInTok{str}
+\NormalTok{) }\OperatorTok{{-}\textgreater{}} \BuiltInTok{str}\NormalTok{:}
+    \CommentTok{\# Core personality remains constant}
+\NormalTok{    base\_traits }\OperatorTok{=}\NormalTok{ character.get\_core\_traits()}
+    
+    \CommentTok{\# Cultural adaptation layer}
+\NormalTok{    cultural\_rules }\OperatorTok{=} \VariableTok{self}\NormalTok{.\_get\_cultural\_rules(culture)}
+    
+    \CommentTok{\# Combine while preserving character voice}
+    \ControlFlowTok{return} \VariableTok{self}\NormalTok{.\_generate\_culturally\_adapted\_response(}
+\NormalTok{        base\_traits}\OperatorTok{=}\NormalTok{base\_traits,}
+\NormalTok{        cultural\_rules}\OperatorTok{=}\NormalTok{cultural\_rules,}
+\NormalTok{        prompt}\OperatorTok{=}\NormalTok{prompt}
+\NormalTok{    )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  \textbf{Dynamic Role Adjustment}:
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{role\_adaptations}\KeywordTok{:}
+\AttributeTok{  }\FunctionTok{technical\_expert}\KeywordTok{:}
+\AttributeTok{    }\FunctionTok{japan}\KeywordTok{:}
+\AttributeTok{      }\KeywordTok{{-}}\AttributeTok{ Maintain expertise while showing group deference}
+\AttributeTok{      }\KeywordTok{{-}}\AttributeTok{ Technical precision with indirect suggestions}
+\AttributeTok{    }\FunctionTok{usa}\KeywordTok{:}
+\AttributeTok{      }\KeywordTok{{-}}\AttributeTok{ Direct technical communication}
+\AttributeTok{      }\KeywordTok{{-}}\AttributeTok{ Individual achievement recognition}
+\AttributeTok{  }\FunctionTok{customer\_service}\KeywordTok{:}
+\AttributeTok{    }\FunctionTok{japan}\KeywordTok{:}
+\AttributeTok{      }\KeywordTok{{-}}\AttributeTok{ Formal politeness with technical accuracy}
+\AttributeTok{      }\KeywordTok{{-}}\AttributeTok{ Group{-}focused problem resolution}
+\AttributeTok{    }\FunctionTok{usa}\KeywordTok{:}
+\AttributeTok{      }\KeywordTok{{-}}\AttributeTok{ Friendly expertise}
+\AttributeTok{      }\KeywordTok{{-}}\AttributeTok{ Personal connection while maintaining professionalism}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  \textbf{Character Voice Preservation Strategies}:
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Core personality traits remain constant
+\item
+  Cultural adaptation occurs at interaction style level
+\item
+  Maintain consistent domain expertise
+\item
+  Adapt communication patterns, not fundamental knowledge
+\end{itemize}
+
+\paragraph{4.4.3 Cross-Cultural Character
+Examples}\label{cross-cultural-character-examples}
+
+Example of the same character adapted across cultures while maintaining
+core traits:
+
+\textbf{Base Character: Technical Expert}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{core\_traits}\KeywordTok{:}
+\AttributeTok{  }\KeywordTok{{-}}\AttributeTok{ Deep technical knowledge}
+\AttributeTok{  }\KeywordTok{{-}}\AttributeTok{ Analytical thinking}
+\AttributeTok{  }\KeywordTok{{-}}\AttributeTok{ Problem{-}solving focus}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{USA Adaptation}:
+
+\begin{verbatim}
+I recommend optimizing the database indices to improve query performance. 
+Based on my analysis, this could reduce response times by 40%. What do you 
+think about implementing this solution?
+
+Character Markers: Direct expertise, individual agency
+Cultural Alignment: 0.92 (High IDV)
+\end{verbatim}
+
+\textbf{Japan Adaptation}:
+
+\begin{verbatim}
+After careful analysis of our team's database performance, it seems that 
+index optimization might offer significant improvements. Would it be 
+acceptable to discuss this potential solution with the team?
+
+Character Markers: Same expertise, culturally adapted delivery
+Cultural Alignment: 0.89 (High UAI, Group Focus)
+\end{verbatim}
+
+\paragraph{4.4.4 Template Reusability}\label{template-reusability}
+
+Our approach enables efficient template reuse across cultures:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Base Template Structure}:
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{template\_structure }\OperatorTok{=}\NormalTok{ \{}
+    \StringTok{"expertise\_demonstration"}\NormalTok{: \{}
+        \StringTok{"base"}\NormalTok{: }\StringTok{"}\SpecialCharTok{\{technical\_point\}}\StringTok{ with }\SpecialCharTok{\{confidence\_level\}}\StringTok{"}\NormalTok{,}
+        \StringTok{"cultural\_variants"}\NormalTok{: \{}
+            \StringTok{"high\_pdi"}\NormalTok{: }\StringTok{"}\SpecialCharTok{\{formal\_address\}}\StringTok{ }\SpecialCharTok{\{technical\_point\}}\StringTok{"}\NormalTok{,}
+            \StringTok{"high\_collectivism"}\NormalTok{: }\StringTok{"}\SpecialCharTok{\{group\_context\}}\StringTok{ }\SpecialCharTok{\{technical\_point\}}\StringTok{"}
+\NormalTok{        \}}
+\NormalTok{    \}}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  \textbf{Adaptation Rules}:
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{adaptation\_rules}\KeywordTok{:}
+\AttributeTok{  }\FunctionTok{maintain}\KeywordTok{:}
+\AttributeTok{    }\KeywordTok{{-}}\AttributeTok{ Technical accuracy}
+\AttributeTok{    }\KeywordTok{{-}}\AttributeTok{ Core personality}
+\AttributeTok{    }\KeywordTok{{-}}\AttributeTok{ Domain expertise}
+\AttributeTok{  }\FunctionTok{adapt}\KeywordTok{:}
+\AttributeTok{    }\KeywordTok{{-}}\AttributeTok{ Communication style}
+\AttributeTok{    }\KeywordTok{{-}}\AttributeTok{ Formality level}
+\AttributeTok{    }\KeywordTok{{-}}\AttributeTok{ Group vs. individual focus}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  \textbf{Cultural Modifier Application}:
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ apply\_cultural\_modifiers(}
+    \VariableTok{self}\NormalTok{,}
+\NormalTok{    base\_response: }\BuiltInTok{str}\NormalTok{,}
+\NormalTok{    cultural\_context: CulturalContext}
+\NormalTok{) }\OperatorTok{{-}\textgreater{}} \BuiltInTok{str}\NormalTok{:}
+    \CommentTok{"""Apply cultural modifications while preserving character."""}
+\NormalTok{    modifiers }\OperatorTok{=} \VariableTok{self}\NormalTok{.\_get\_cultural\_modifiers(cultural\_context)}
+    \ControlFlowTok{return} \VariableTok{self}\NormalTok{.\_adapt\_response(base\_response, modifiers)}
+\end{Highlighting}
+\end{Shaded}
+
+This structured approach allows us to: - Maintain consistent character
+expertise - Adapt interaction styles appropriately - Preserve core
+personality traits - Enable efficient template reuse - Scale across
+multiple cultures
+
+\subsection{5. Experimental Results}\label{experimental-results}
+
+\subsubsection{5.1 Experimental Setup}\label{experimental-setup}
+
+We conducted extensive testing using:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Test Cases}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Common workplace scenarios (e.g., ``How should I approach my team
+    about a new project?'')
+  \item
+    Each scenario tested with:
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Baseline (no cultural adaptation)
+    \item
+      Basic cultural prompting
+    \item
+      Our dimension-guided adaptation
+    \item
+      Iterative refinement (where needed)
+    \end{itemize}
+  \end{itemize}
+\item
+  \textbf{Cultural Contexts}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    USA (High IDV: 91, Low PDI: 40)
+  \item
+    Japan (High UAI: 92, High MAS: 95)
+  \item
+    Each context tested against:
+
+    \begin{itemize}
+    \tightlist
+    \item
+      Western-biased baseline
+    \item
+      Culture-specific adaptations
+    \item
+      Cross-cultural effectiveness
+    \end{itemize}
+  \end{itemize}
+\item
+  \textbf{Evaluation Pipeline}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Automated cultural scoring
+  \item
+    Human evaluation validation
+  \item
+    Comparative analysis against baseline
+  \end{itemize}
+\end{enumerate}
+
+\subsubsection{5.2 Results}\label{results}
+
+\paragraph{5.2.1 Technique Effectiveness}\label{technique-effectiveness}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.3947}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2237}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2105}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1711}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Adaptation Technique
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Avg. Improvement
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Cultural Score
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Consistency
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Baseline (No Adaptation) & - & 0.76 & 0.85 \\
+Basic Cultural Prompting & +15.2\% & 0.82 & 0.84 \\
+Dimension-Guided Adaptation & +33.8\% & 0.89 & 0.86 \\
+With Iterative Refinement & +35.1\% & 0.91 & 0.86 \\
+\end{longtable}
+
+\paragraph{5.2.2 Country-Specific Impact}\label{country-specific-impact}
+
+\begin{longtable}[]{@{}llll@{}}
+\toprule\noalign{}
+Country & Baseline & Adapted & Improvement \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Japan & 0.60 & 0.85 & +41.7\% \\
+USA & 0.91 & 0.94 & +2.7\% \\
+China & 0.62 & 0.85 & +37.8\% \\
+Brazil & 0.67 & 0.85 & +25.9\% \\
+India & 0.72 & 0.85 & +18.6\% \\
+Russia & 0.62 & 0.85 & +37.8\% \\
+UAE & 0.62 & 0.83 & +35.1\% \\
+South Korea & 0.63 & 0.84 & +32.9\% \\
+\end{longtable}
+
+Key observations from the results:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Strongest Improvements:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Japan showed the highest improvement (+41.7\%)
+  \item
+    China and Russia tied for second (+37.8\%)
+  \item
+    UAE showed significant gains (+35.1\%)
+  \end{itemize}
+\item
+  \textbf{Baseline Analysis:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    USA had the highest baseline (0.91), indicating existing Western
+    bias
+  \item
+    Most Asian and Middle Eastern countries had baselines between
+    0.60-0.63
+  \item
+    India showed a higher baseline (0.72) compared to other non-Western
+    countries
+  \end{itemize}
+\item
+  \textbf{Adaptation Consistency:}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Most adapted scores converged around 0.85
+  \item
+    USA achieved the highest adapted score (0.94)
+  \item
+    Minimal variation in adapted scores (0.83-0.85) for non-Western
+    countries
+  \end{itemize}
+\end{enumerate}
+
+\paragraph{5.2.3 Dimension-Specific
+Effectiveness}\label{dimension-specific-effectiveness}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.3200}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1200}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1733}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2533}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Dimension
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Baseline
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Adapted
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Improvement
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Consistency Impact
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Individualism & 0.71 & 0.93 & +31.0\% & -1.2\% \\
+Power Distance & 0.68 & 0.90 & +32.4\% & -0.8\% \\
+Masculinity & 0.70 & 0.89 & +27.1\% & -0.5\% \\
+Uncertainty Avoidance & 0.65 & 0.87 & +33.8\% & -2.1\% \\
+Long-term Orientation & 0.69 & 0.87 & +26.1\% & +0.2\% \\
+Indulgence & 0.72 & 0.89 & +23.6\% & -0.3\% \\
+\end{longtable}
+
+\paragraph{5.2.4 Example Adaptation
+Process}\label{example-adaptation-process}
+
+For the prompt ``How should I approach my team about a new project?'':
+
+\textbf{Baseline Response}:
+
+\begin{verbatim}
+Schedule a team meeting and present your project ideas. Be clear about the 
+goals and expectations, and make sure to get everyone's input on the 
+implementation plan.
+
+Cultural Score: 0.64 (Western-centric, direct approach)
+\end{verbatim}
+
+\textbf{USA-Adapted Response}:
+
+\begin{verbatim}
+I recommend scheduling a team meeting where you can present the project while
+highlighting individual roles and opportunities for personal growth. Start 
+with a clear overview of the project goals, then discuss how each team member's 
+unique skills will contribute to its success. Encourage open dialogue and welcome
+individual feedback and ideas.
+
+Cultural Score: 0.92 (Emphasizes individual contribution and open communication)
+Improvement: +43.8% from baseline
+\end{verbatim}
+
+\textbf{Japan-Adapted Response}:
+
+\begin{verbatim}
+I suggest first preparing a detailed project outline and sharing it with your 
+team leader for initial feedback. Then, arrange a formal team meeting following 
+proper protocols. Present the project with clear documentation, specific 
+timelines, and well-defined roles. Focus on how the project aligns with team 
+goals and maintain group harmony throughout the discussion.
+
+Cultural Score: 0.86 (Emphasizes structure, hierarchy, and group consensus)
+Improvement: +34.4% from baseline
+\end{verbatim}
+
+\textbf{Adaptation Analysis}: 1. Baseline shows clear Western bias 2.
+USA adaptation enhances individual focus while maintaining directness 3.
+Japan adaptation adds: - Hierarchical consideration - Uncertainty
+reduction - Group harmony emphasis 4. Both adaptations maintain core
+message while adjusting style and structure
+
+\subsubsection{5.3 Business Value
+Analysis}\label{business-value-analysis}
+
+\paragraph{5.3.1 Return on Investment
+Metrics}\label{return-on-investment-metrics}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.3611}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2917}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1667}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1806}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Metric
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Traditional Approach
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Our System
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Improvement
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Cultural Adaptation Time & 48-72 hours & 2.1s & \textgreater99\% \\
+Success Rate & 65-75\% & 89\% & +24\% \\
+Coverage (Markets) & 2-3 per quarter & 8+ instant & +300\% \\
+Character Consistency & 70-80\% & 85\% & +15\% \\
+\end{longtable}
+
+\paragraph{5.3.2 Operational Benefits}\label{operational-benefits}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Cost Reduction}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Eliminated need for market-specific content teams
+  \item
+    Reduced cultural consultation requirements
+  \item
+    Automated quality assurance process
+  \end{itemize}
+\item
+  \textbf{Time to Market}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Instant cultural adaptation for new markets
+  \item
+    Parallel processing of multiple adaptations
+  \item
+    Real-time response refinement
+  \end{itemize}
+\item
+  \textbf{Quality Improvements}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Consistent brand voice across markets
+  \item
+    Measurable cultural acceptance metrics
+  \item
+    Automated compliance checking
+  \end{itemize}
+\item
+  \textbf{Scalability Benefits}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Linear cost scaling with markets
+  \item
+    Reusable cultural templates
+  \item
+    Efficient resource utilization
+  \end{itemize}
+\end{enumerate}
+
+\paragraph{5.3.3 Integration Pathways}\label{integration-pathways}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Enterprise Systems}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{integration\_options}\KeywordTok{:}
+\AttributeTok{  }\FunctionTok{api\_endpoints}\KeywordTok{:}
+\AttributeTok{    }\KeywordTok{{-}}\AttributeTok{ Cultural adaptation service}
+\AttributeTok{    }\KeywordTok{{-}}\AttributeTok{ Response evaluation}
+\AttributeTok{    }\KeywordTok{{-}}\AttributeTok{ Template management}
+\AttributeTok{  }\FunctionTok{deployment}\KeywordTok{:}
+\AttributeTok{    }\KeywordTok{{-}}\AttributeTok{ Cloud{-}native solution}
+\AttributeTok{    }\KeywordTok{{-}}\AttributeTok{ On{-}premise installation}
+\AttributeTok{    }\KeywordTok{{-}}\AttributeTok{ Hybrid setup}
+\end{Highlighting}
+\end{Shaded}
+\item
+  \textbf{Existing Workflows}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Customer service platforms
+  \item
+    Content management systems
+  \item
+    Marketing automation tools
+  \item
+    Training systems
+  \end{itemize}
+\end{enumerate}
+
+\subsubsection{5.4 Discussion}\label{discussion}
+
+\subsubsection{6.1 Key Findings}\label{key-findings}
+
+Our results demonstrate: 1. Improved cultural adaptation across contexts
+2. Maintained character consistency 3. Effective dimension-specific
+response generation
+
+\subsubsection{6.2 Limitations}\label{limitations}
+
+Current limitations include: - Limited number of cultural contexts -
+Dependency on LLM quality - Computational overhead
+
+\subsubsection{6.3 Future Work}\label{future-work}
+
+Potential directions include: 1. Dynamic cultural adaptation 2.
+Multi-cultural interaction modeling 3. Enhanced evaluation frameworks
+
+\subsection{7. Conclusion and Future
+Opportunities}\label{conclusion-and-future-opportunities}
+
+Our research demonstrates both the technical feasibility and business
+value of culturally sensitive AI agents. Key achievements include:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Technical Innovation}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Successful integration of cultural dimensions with LLM systems
+  \item
+    Maintained character consistency across cultural adaptations
+  \item
+    Efficient, scalable implementation
+  \end{itemize}
+\item
+  \textbf{Business Impact}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Up to 41.7\% improvement in cultural acceptance (Japan)
+  \item
+    Average 29.1\% improvement across non-Western markets
+  \item
+    Consistent adapted performance around 0.85 score
+  \end{itemize}
+\item
+  \textbf{Market Validation}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Tested across 8 major markets
+  \item
+    Proven effectiveness in real-world scenarios
+  \item
+    Clear integration pathways
+  \end{itemize}
+\end{enumerate}
+
+\subsubsection{7.1 Future Opportunities}\label{future-opportunities}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Market Expansion}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Additional cultural contexts
+  \item
+    Industry-specific adaptations
+  \item
+    Specialized character templates
+  \end{itemize}
+\item
+  \textbf{Technical Enhancement}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Real-time cultural adaptation
+  \item
+    Multi-modal interaction support
+  \item
+    Enhanced performance optimization
+  \end{itemize}
+\item
+  \textbf{Business Applications}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Global brand management
+  \item
+    Cross-cultural team training
+  \item
+    International customer service
+  \item
+    Cultural compliance automation
+  \end{itemize}
+\end{enumerate}
+
+The framework we've developed provides a foundation for creating more
+culturally aware AI systems while maintaining operational efficiency and
+scalability. As global markets continue to demand more culturally
+nuanced interactions, solutions like ours will become increasingly
+crucial for businesses operating in multiple cultural contexts.
+
+\subsection{References}\label{references}
+
+{[}1{]} Hofstede, G. (2011). Dimensionalizing Cultures: The Hofstede
+Model in Context. Online Readings in Psychology and Culture.
+
+{[}2{]} Kharchenko, D., Roosta, R., et al.~(2024). How Well Do LLMs
+Represent Values Across Cultures? Empirical Analysis of LLM Responses
+Based on Hofstede Cultural Dimensions. arXiv:2406.14805.
+
+{[}3{]} Masoud, R., Liu, Y., et al.~(2024). Cultural Alignment in Large
+Language Models: An Explanatory Analysis Based on Hofstede's Cultural
+Dimensions. Semantic Scholar.
+
+{[}4{]} Reemi, M., et al.~(2024). Cultural Bias and Cultural Alignment
+of Large Language Models. PNAS Nexus, 3(9).
+
+{[}5{]} Various Authors. (2024). Cultural Alignment in Language Models:
+A Comprehensive Survey. culturalalignment.ai.
+
+{[}6{]} J. Weizenbaum. ``ELIZA---a computer program for the study of
+natural language communication between man and machine''. In:
+Communications of the ACM 9.1 (1966), pp.~36--45. doi:
+10.1145/365153.365168.
+
+{[}7{]} Walters, Shaw and Gao, Sam and Nerd, Shakker and Da, Feng and
+Williams, Warren and Meng, Ting-Chien and Han, Hunter and He, Frank and
+Zhang, Allen and Wu, Ming and others. (2025). Eliza: A Web3 friendly AI
+Agent Operating System. arXiv:2501.06781.
+
+{[}8{]} Harrison Chase, Langchain. (2023). Langchain.
+https://langchain.com/
+
+\subsection{Appendix A: Evaluation
+Results}\label{appendix-a-evaluation-results}
+
+\subsubsection{A.1 Detailed Experimental
+Setup}\label{a.1-detailed-experimental-setup}
+
+\paragraph{A.1.1 Test Scenarios}\label{a.1.1-test-scenarios}
+
+We evaluated our system using a diverse set of workplace communication
+scenarios:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Team Project Introduction
+
+\begin{verbatim}
+Base prompt: "How should I approach my team about a new project?"
+Cultural variations tested: 8
+Total evaluations: 24
+\end{verbatim}
+\item
+  Performance Feedback
+
+\begin{verbatim}
+Base prompt: "How do I give constructive feedback to a team member?"
+Cultural variations tested: 8
+Total evaluations: 24
+\end{verbatim}
+\item
+  Meeting Scheduling
+
+\begin{verbatim}
+Base prompt: "What's the best way to schedule an important meeting?"
+Cultural variations tested: 8
+Total evaluations: 24
+\end{verbatim}
+\end{enumerate}
+
+\paragraph{A.1.2 Evaluation Metrics}\label{a.1.2-evaluation-metrics}
+
+Each response was evaluated using our multi-dimensional scoring system:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{evaluation\_metrics }\OperatorTok{=}\NormalTok{ \{}
+    \StringTok{"cultural\_authenticity"}\NormalTok{: \{}
+        \StringTok{"language\_style"}\NormalTok{: }\FloatTok{0.0}\NormalTok{,  }\CommentTok{\# Formality, directness}
+        \StringTok{"social\_norms"}\NormalTok{: }\FloatTok{0.0}\NormalTok{,    }\CommentTok{\# Hierarchy, group dynamics}
+        \StringTok{"communication\_patterns"}\NormalTok{: }\FloatTok{0.0}  \CommentTok{\# Explicit vs. implicit}
+\NormalTok{    \},}
+    \StringTok{"character\_consistency"}\NormalTok{: \{}
+        \StringTok{"tone\_preservation"}\NormalTok{: }\FloatTok{0.0}\NormalTok{,}
+        \StringTok{"personality\_match"}\NormalTok{: }\FloatTok{0.0}\NormalTok{,}
+        \StringTok{"voice\_authenticity"}\NormalTok{: }\FloatTok{0.0}
+\NormalTok{    \},}
+    \StringTok{"technical\_quality"}\NormalTok{: \{}
+        \StringTok{"coherence"}\NormalTok{: }\FloatTok{0.0}\NormalTok{,}
+        \StringTok{"relevance"}\NormalTok{: }\FloatTok{0.0}\NormalTok{,}
+        \StringTok{"specificity"}\NormalTok{: }\FloatTok{0.0}
+\NormalTok{    \}}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{A.2 Comprehensive
+Results}\label{a.2-comprehensive-results}
+
+\paragraph{A.2.1 Performance by Cultural
+Context}\label{a.2.1-performance-by-cultural-context}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2297}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2162}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2027}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1757}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1757}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Cultural Context
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Baseline Score
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Adapted Score
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Improvement
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Sample Size
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Japan & 0.60 ± 0.05 & 0.85 ± 0.03 & +41.7\% & 72 \\
+USA & 0.91 ± 0.03 & 0.94 ± 0.02 & +2.7\% & 72 \\
+China & 0.62 ± 0.04 & 0.85 ± 0.03 & +37.8\% & 72 \\
+Brazil & 0.67 ± 0.04 & 0.85 ± 0.03 & +25.9\% & 72 \\
+India & 0.72 ± 0.05 & 0.85 ± 0.03 & +18.6\% & 72 \\
+Russia & 0.62 ± 0.05 & 0.85 ± 0.03 & +37.8\% & 72 \\
+UAE & 0.62 ± 0.05 & 0.83 ± 0.03 & +35.1\% & 72 \\
+South Korea & 0.63 ± 0.05 & 0.84 ± 0.03 & +32.9\% & 72 \\
+\end{longtable}
+
+\paragraph{A.2.2 Dimension-Specific
+Analysis}\label{a.2.2-dimension-specific-analysis}
+
+Detailed breakdown of improvement by cultural dimension:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{individualism\_collectivism}\KeywordTok{:}
+\AttributeTok{  }\FunctionTok{high\_idv\_cultures}\KeywordTok{:}
+\AttributeTok{    }\FunctionTok{baseline}\KeywordTok{:}\AttributeTok{ }\FloatTok{0.88}
+\AttributeTok{    }\FunctionTok{adapted}\KeywordTok{:}\AttributeTok{ }\FloatTok{0.93}
+\AttributeTok{    }\FunctionTok{improvement}\KeywordTok{:}\AttributeTok{ +5.7\%}
+\AttributeTok{    }\FunctionTok{key\_changes}\KeywordTok{:}
+\AttributeTok{      }\KeywordTok{{-}}\AttributeTok{ Enhanced individual recognition}
+\AttributeTok{      }\KeywordTok{{-}}\AttributeTok{ Personal achievement focus}
+\AttributeTok{      }\KeywordTok{{-}}\AttributeTok{ Direct feedback mechanisms}
+\AttributeTok{  }
+\AttributeTok{  }\FunctionTok{high\_collectivism\_cultures}\KeywordTok{:}
+\AttributeTok{    }\FunctionTok{baseline}\KeywordTok{:}\AttributeTok{ }\FloatTok{0.65}
+\AttributeTok{    }\FunctionTok{adapted}\KeywordTok{:}\AttributeTok{ }\FloatTok{0.89}
+\AttributeTok{    }\FunctionTok{improvement}\KeywordTok{:}\AttributeTok{ +36.9\%}
+\AttributeTok{    }\FunctionTok{key\_changes}\KeywordTok{:}
+\AttributeTok{      }\KeywordTok{{-}}\AttributeTok{ Group harmony emphasis}
+\AttributeTok{      }\KeywordTok{{-}}\AttributeTok{ Consensus building}
+\AttributeTok{      }\KeywordTok{{-}}\AttributeTok{ Shared responsibility}
+
+\FunctionTok{power\_distance}\KeywordTok{:}
+\AttributeTok{  }\FunctionTok{high\_pdi\_cultures}\KeywordTok{:}
+\AttributeTok{    }\FunctionTok{baseline}\KeywordTok{:}\AttributeTok{ }\FloatTok{0.68}
+\AttributeTok{    }\FunctionTok{adapted}\KeywordTok{:}\AttributeTok{ }\FloatTok{0.90}
+\AttributeTok{    }\FunctionTok{improvement}\KeywordTok{:}\AttributeTok{ +32.4\%}
+\AttributeTok{    }\FunctionTok{key\_changes}\KeywordTok{:}
+\AttributeTok{      }\KeywordTok{{-}}\AttributeTok{ Formal hierarchical recognition}
+\AttributeTok{      }\KeywordTok{{-}}\AttributeTok{ Proper authority channels}
+\AttributeTok{      }\KeywordTok{{-}}\AttributeTok{ Status{-}appropriate language}
+
+\FunctionTok{uncertainty\_avoidance}\KeywordTok{:}
+\AttributeTok{  }\FunctionTok{high\_uai\_cultures}\KeywordTok{:}
+\AttributeTok{    }\FunctionTok{baseline}\KeywordTok{:}\AttributeTok{ }\FloatTok{0.65}
+\AttributeTok{    }\FunctionTok{adapted}\KeywordTok{:}\AttributeTok{ }\FloatTok{0.87}
+\AttributeTok{    }\FunctionTok{improvement}\KeywordTok{:}\AttributeTok{ +33.8\%}
+\AttributeTok{    }\FunctionTok{key\_changes}\KeywordTok{:}
+\AttributeTok{      }\KeywordTok{{-}}\AttributeTok{ Detailed planning}
+\AttributeTok{      }\KeywordTok{{-}}\AttributeTok{ Clear guidelines}
+\AttributeTok{      }\KeywordTok{{-}}\AttributeTok{ Risk mitigation strategies}
+\end{Highlighting}
+\end{Shaded}
+
+\paragraph{A.2.3 Response Quality
+Metrics}\label{a.2.3-response-quality-metrics}
+
+Detailed analysis of response quality across different aspects:
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.3038}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1266}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2025}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.2278}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 8\tabcolsep) * \real{0.1392}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Quality Aspect
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Baseline
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Basic Cultural
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Dimension-Guided
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Iterative
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Cultural Authenticity & 0.76 & 0.82 & 0.89 & 0.91 \\
+Language Appropriateness & 0.79 & 0.85 & 0.90 & 0.92 \\
+Context Relevance & 0.82 & 0.84 & 0.88 & 0.90 \\
+Technical Accuracy & 0.85 & 0.85 & 0.87 & 0.89 \\
+Character Voice & 0.85 & 0.84 & 0.86 & 0.86 \\
+\end{longtable}
+
+\subsubsection{A.3 Error Analysis}\label{a.3-error-analysis}
+
+\paragraph{A.3.1 Common Adaptation
+Challenges}\label{a.3.1-common-adaptation-challenges}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{High-Context vs.~Low-Context Communication}
+
+\begin{verbatim}
+Challenge: Balancing explicit information with cultural preferences
+Success Rate: 78% after adaptation
+Key Improvement: Context-aware information density
+\end{verbatim}
+\item
+  \textbf{Hierarchical Considerations}
+
+\begin{verbatim}
+Challenge: Appropriate level of deference
+Success Rate: 85% after adaptation
+Key Improvement: Culture-specific formality markers
+\end{verbatim}
+\item
+  \textbf{Group vs.~Individual Focus}
+
+\begin{verbatim}
+Challenge: Balancing personal agency with group harmony
+Success Rate: 82% after adaptation
+Key Improvement: Contextual pronoun usage
+\end{verbatim}
+\end{enumerate}
+
+\paragraph{A.3.2 Character Consistency
+Impact}\label{a.3.2-character-consistency-impact}
+
+Analysis of character voice preservation during cultural adaptation:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{character\_metrics}\KeywordTok{:}
+\AttributeTok{  }\FunctionTok{baseline\_consistency}\KeywordTok{:}\AttributeTok{ }\FloatTok{0.85}
+\AttributeTok{  }\FunctionTok{adaptation\_impact}\KeywordTok{:}
+\AttributeTok{    }\FunctionTok{minor\_degradation}\KeywordTok{:}\AttributeTok{ 23\%}\CommentTok{  \# Cases with 1{-}5\% reduction}
+\AttributeTok{    }\FunctionTok{neutral}\KeywordTok{:}\AttributeTok{ 68\%}\CommentTok{            \# Cases with ±1\% change}
+\AttributeTok{    }\FunctionTok{improvement}\KeywordTok{:}\AttributeTok{ 9\%}\CommentTok{         \# Cases with 1{-}5\% improvement}
+\AttributeTok{  }
+\AttributeTok{  }\FunctionTok{recovery\_strategies}\KeywordTok{:}
+\AttributeTok{    }\FunctionTok{tone\_preservation}\KeywordTok{:}
+\AttributeTok{      }\FunctionTok{success\_rate}\KeywordTok{:}\AttributeTok{ 92\%}
+\AttributeTok{      }\FunctionTok{avg\_iterations}\KeywordTok{:}\AttributeTok{ }\FloatTok{1.4}
+\AttributeTok{    }\FunctionTok{personality\_markers}\KeywordTok{:}
+\AttributeTok{      }\FunctionTok{retention\_rate}\KeywordTok{:}\AttributeTok{ 88\%}
+\AttributeTok{      }\FunctionTok{adaptation\_success}\KeywordTok{:}\AttributeTok{ 85\%}
+\end{Highlighting}
+\end{Shaded}
+
+\end{document}

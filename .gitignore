@@ -1,0 +1,33 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+*.egg-info/
+dist/
+build/
+
+.DS_Store
+
+# Virtual environments
+venv/
+env/
+.env/
+
+# IDE settings
+.vscode/
+.idea/
+
+# Logs
+*.log
+mermaid-filter.err
+Culturally Sensitive Agents.zip
+
+.env
+.env.local
+
+.secrets/
+.service_account.json
+.google_drive_credentials.json
+.token.json
